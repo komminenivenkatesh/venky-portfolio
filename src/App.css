@@ -1,0 +1,50 @@
+/* ========================================
+SPOTIFY EQUALIZER & ANIMATIONS
+======================================== */
+@keyframes playing {
+  0% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.2);
+  }
+}
+
+/* ========================================
+TYPING CURSOR
+======================================== */
+.typing-cursor {
+  animation: cursorBlink 0.7s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ========================================
+SMOOTH SCROLL & REVEAL
+======================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(115, 23, 207, 0.45);
+  color: #ffffff;
+}
