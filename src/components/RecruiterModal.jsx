@@ -131,25 +131,31 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Sysslan IT Solutions:</strong> Full-Stack Web Development Intern (March – April 2026). Developed interactive UI components and integrated backend REST APIs.
+                  <strong>Sysslan IT Solutions:</strong> Full-Stack Web Development Intern (March – April 2026). Cut DOM re-renders by 28%, boosted Lighthouse from 72 to 91, and engineered 12+ secure REST endpoints with Docker & Postman testing.
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Vahan Bhazar:</strong> Production digital marketplace for two-wheelers deployed live on Vercel with search optimization and responsive UI.
+                  <strong>Vahan Bazar:</strong> Full-stack two-wheeler marketplace with 1,200+ listings, compound indexes slashing query latency from 850ms to 540ms (~36% speedup), and Cloudinary payload reduction of 47%.
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Hospital Medical System (Sushuruth):</strong> Full-stack healthcare management infrastructure streamlining patient registration, appointments, and doctor scheduling.
+                  <strong>Hospital Medical System (Sushuruth):</strong> End-to-end healthcare platform handling admissions, digital medical records (EMR), scheduled consultations, and role-based access control (RBAC).
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-pink-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Brain Tumor Detection ML:</strong> Deep Convolutional Neural Network (CNN) in TensorFlow & OpenCV for computer-aided clinical MRI diagnostics.
+                  <strong>Brain Tumor Detection AI:</strong> Deep CNN across 3,000+ Kaggle Br35H brain MRI images achieving 94.2% test accuracy, 0.93 F1-score, and 95.1% sensitivity via 5-fold cross-validation.
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <FiCheckCircle className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                <span>
+                  <strong>Real-Time Indian Sign Language AI:</strong> 28+ FPS gesture-to-text inference pipeline under 35ms latency extracting 21 3D MediaPipe hand landmarks with 96.4% gesture accuracy.
                 </span>
               </div>
               <div className="flex items-start gap-2">
@@ -159,15 +165,9 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <FiCheckCircle className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                <span>
-                  <strong>Indian Sign Language & Emotion AI:</strong> Real-time computer vision stream translating continuous manual gestures and facial emotions into text strings.
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>IBM Certifications (3x):</strong> Machine Learning Professional, Data Science Methodologies, and Introduction to Python.
+                  <strong>IBM Certifications (3x):</strong> Machine Learning Professional (Supervised Learning, Neural Networks), Data Science Methodologies, and Introduction to Python.
                 </span>
               </div>
             </div>
@@ -200,6 +200,16 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
               >
                 <FiGithub />
                 <span>GitHub</span>
+              </a>
+              <span className="text-slate-600">•</span>
+              <a
+                href="https://linkedin.com/in/komminenivenkatesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-cyan-accent flex items-center gap-1"
+              >
+                <FiLinkedin />
+                <span>LinkedIn</span>
               </a>
               <span className="text-slate-600">•</span>
               <a

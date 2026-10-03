@@ -57,12 +57,21 @@ const Footer = ({ onTriggerResume }) => {
             </a>
             <span>•</span>
             <a
+              href="https://linkedin.com/in/komminenivenkatesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              LinkedIn
+            </a>
+            <span>•</span>
+            <a
               href="https://vahan-bhazar.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-cyan-accent transition-colors"
             >
-              Vahan Bhazar
+              Vahan Bazar
             </a>
             <span>•</span>
             <a

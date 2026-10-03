@@ -16,7 +16,7 @@ const credentials = [
   {
     icon: <FiAward className="text-yellow-400" />,
     title: 'Machine Learning Professional',
-    desc: 'Professional Certificate — Issued by IBM. Verified in deep learning, model evaluation, and predictive pipelines.',
+    desc: 'Professional Certificate — Coursera / IBM (Supervised Learning, Neural Networks, Model Optimization).',
   },
   {
     icon: <FiAward className="text-cyan-accent" />,
@@ -30,8 +30,8 @@ const credentials = [
   },
   {
     icon: <FiCode className="text-accent" />,
-    title: 'Full-Stack Engineering Intern',
-    desc: 'Sysslan IT Solutions (Remote, 2026). Building interactive UI modules and integrating backend REST APIs.',
+    title: 'Full-Stack Web Dev Intern',
+    desc: 'Sysslan IT Solutions (Remote, 2026). Boosted Lighthouse from 72 to 91, cut DOM re-renders by 28%, and built 12+ REST endpoints.',
   },
 ];
 
@@ -65,11 +65,11 @@ const About = () => {
             </p>
 
             <p className="text-slate-400 text-sm leading-relaxed">
-              I combine sharp analytical thinking and consistency with hands-on full-stack web development and practical AI solutions. During my internship at <strong className="text-slate-200">Sysslan IT Solutions</strong>, I engineered interactive UI modules and integrated production backend APIs.
+              I combine sharp analytical thinking with practical full-stack web development and applied AI engineering. During my internship at <strong className="text-slate-200">Sysslan IT Solutions</strong>, I architected modular React components with memoized hooks (cutting redundant DOM re-renders by 28%), boosted Lighthouse scores from 72 to 91, and engineered 12+ secure RESTful API endpoints.
             </p>
 
             <p className="text-slate-400 text-sm leading-relaxed">
-              From architecting 3D wealth-tracking dashboards using <strong className="text-slate-200">Three.js</strong> and the MERN stack to training deep <strong className="text-slate-200">Convolutional Neural Networks (CNN)</strong> for clinical MRI diagnostics, I love building responsive, dependable software solutions.
+              From building high-performance marketplaces like <strong className="text-slate-200">Vahan Bazar</strong> (reducing search latency by ~36% across 1,200+ listings) to training clinical <strong className="text-slate-200">Deep CNN models (94.2% test accuracy)</strong> for brain MRI classification, I focus on delivering scalable, measurable software solutions.
             </p>
 
             <div className="pt-4 border-t border-white/10 font-mono text-xs text-slate-400 flex flex-wrap gap-4 items-center justify-between">
@@ -77,15 +77,27 @@ const About = () => {
                 <FiMapPin className="text-accent" />
                 <span>Sonipat, Delhi NCR</span>
               </span>
-              <a
-                href="https://github.com/komminenivenkatesh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:underline flex items-center gap-1 font-semibold"
-              >
-                <span>github.com/komminenivenkatesh</span>
-                <FiExternalLink className="w-3 h-3" />
-              </a>
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://github.com/komminenivenkatesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline flex items-center gap-1 font-semibold"
+                >
+                  <span>GitHub</span>
+                  <FiExternalLink className="w-3 h-3" />
+                </a>
+                <span className="text-slate-600">•</span>
+                <a
+                  href="https://linkedin.com/in/komminenivenkatesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline flex items-center gap-1 font-semibold"
+                >
+                  <span>LinkedIn</span>
+                  <FiExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
           </div>
 

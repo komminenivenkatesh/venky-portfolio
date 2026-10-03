@@ -123,7 +123,7 @@ const Contact = () => {
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com/"
+                  href="https://linkedin.com/in/komminenivenkatesh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 text-xs font-semibold transition-colors"

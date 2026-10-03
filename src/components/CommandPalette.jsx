@@ -7,6 +7,7 @@ import {
   FiMail, 
   FiDownload, 
   FiGithub, 
+  FiLinkedin,
   FiEye, 
   FiCheck,
   FiX
@@ -93,6 +94,15 @@ const CommandPalette = ({ isOpen, onClose, onToggleRecruiter, recruiterMode, onT
       icon: <FiGithub className="text-slate-200" />,
       action: () => {
         window.open('https://github.com/komminenivenkatesh', '_blank');
+        onClose(false);
+      },
+    },
+    {
+      id: 'linkedin',
+      label: 'Open: linkedin.com/in/komminenivenkatesh',
+      icon: <FiLinkedin className="text-cyan-400" />,
+      action: () => {
+        window.open('https://linkedin.com/in/komminenivenkatesh', '_blank');
         onClose(false);
       },
     },

@@ -154,6 +154,15 @@ const Hero = ({ onTriggerResume, resumeStatus }) => {
                     <FiGithub className="w-4 h-4" />
                   </a>
                   <a
+                    href="https://linkedin.com/in/komminenivenkatesh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
+                    title="LinkedIn: linkedin.com/in/komminenivenkatesh"
+                  >
+                    <FiLinkedin className="w-4 h-4" />
+                  </a>
+                  <a
                     href="mailto:komminenivenkatesh045@gmail.com"
                     className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
                     title="Email: komminenivenkatesh045@gmail.com"
