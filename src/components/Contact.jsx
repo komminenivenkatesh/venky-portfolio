@@ -7,26 +7,54 @@ import {
   FiLinkedin, 
   FiSend, 
   FiCheckCircle, 
+  FiAlertCircle,
   FiTerminal, 
   FiMessageSquare 
 } from 'react-icons/fi';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState({ type: '', text: '' });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus('Transmitting packet through secure socket...');
+    setStatus({ type: 'loading', text: 'Transmitting packet to Venky\'s inbox...' });
 
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://formspree.io/f/xqparkbl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          text: 'Message delivered to Venky\'s Gmail! Thank you for reaching out.',
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await response.json();
+        const errorMsg = data?.errors?.map((err) => err.message).join(', ') || 'Failed to dispatch message.';
+        setStatus({
+          type: 'error',
+          text: `${errorMsg} Please email komminenivenkatesh045@gmail.com directly.`,
+        });
+      }
+    } catch (err) {
+      setStatus({
+        type: 'error',
+        text: 'Network transmission failure. Please email komminenivenkatesh045@gmail.com directly.',
+      });
+    } finally {
       setLoading(false);
-      setStatus('Message delivered successfully! Thank you for reaching out.');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(''), 5000);
-    }, 1200);
+      setTimeout(() => setStatus({ type: '', text: '' }), 6000);
+    }
   };
 
   return (
@@ -150,6 +178,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     placeholder="e.g. Alex Morgan"
                     value={formData.name}
@@ -164,6 +193,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     placeholder="e.g. alex@company.com"
                     value={formData.email}
@@ -178,6 +208,7 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
                     required
                     placeholder="Tell me about your project, role, or say hello..."
                     value={formData.message}
@@ -192,13 +223,25 @@ const Contact = () => {
                   className="w-full py-3.5 rounded-xl bg-accent hover:bg-accent-light text-white font-bold text-sm shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   <FiSend className="w-4 h-4" />
-                  <span>{loading ? 'Transmitting...' : 'Send Message'}</span>
+                  <span>{loading ? 'Transmitting to Gmail...' : 'Send Message'}</span>
                 </button>
 
-                {status && (
-                  <div className="p-3 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center gap-2 animate-pulse">
-                    <FiCheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>{status}</span>
+                {status.text && (
+                  <div
+                    className={`p-3 rounded-xl border text-xs font-mono flex items-center gap-2 animate-pulse ${
+                      status.type === 'success'
+                        ? 'bg-emerald-950/80 border-emerald-500/40 text-emerald-300'
+                        : status.type === 'error'
+                        ? 'bg-rose-950/80 border-rose-500/40 text-rose-300'
+                        : 'bg-purple-950/80 border-purple-500/40 text-purple-200'
+                    }`}
+                  >
+                    {status.type === 'error' ? (
+                      <FiAlertCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                    ) : (
+                      <FiCheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    )}
+                    <span>{status.text}</span>
                   </div>
                 )}
               </form>
