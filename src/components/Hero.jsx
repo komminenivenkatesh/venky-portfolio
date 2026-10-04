@@ -112,9 +112,9 @@ const Hero = ({ onTriggerResume, resumeStatus }) => {
               <div className="relative inline-block group">
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-[3px] border-accent shadow-glow-purple bg-[#1a1a2e] transition-transform duration-300 group-hover:scale-105">
                   <img
-                    src="https://avatars.githubusercontent.com/u/147895500?v=4"
+                    src="/profile.jpg"
                     alt="Kommineni Venkateswarlu"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 {/* GPA / Status Badge */}

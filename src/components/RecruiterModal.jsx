@@ -63,9 +63,9 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/10">
             <div className="flex items-center gap-3">
               <img
-                src="https://avatars.githubusercontent.com/u/147895500?v=4"
+                src="/profile.jpg"
                 alt="Kommineni Venkateswarlu"
-                className="w-14 h-14 rounded-full border-2 border-accent object-cover"
+                className="w-14 h-14 rounded-full border-2 border-accent object-cover object-top"
               />
               <div>
                 <h4 className="text-lg font-bold text-white">Venkateswarlu Kommineni</h4>
