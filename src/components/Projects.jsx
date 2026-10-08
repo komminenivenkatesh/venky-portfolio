@@ -76,6 +76,20 @@ const allProjects = [
     borderGlow: 'hover:border-amber-500/70 hover:shadow-[0_10px_35px_rgba(245,158,11,0.3)]',
     image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&auto=format&fit=crop&q=80',
   },
+  {
+    id: 'venky-portfolio',
+    title: 'Developer Portfolio (Venky)',
+    category: 'web',
+    tagline: 'High-Performance Cybernetic Developer Portfolio',
+    description: 'Modern developer portfolio built with React 19, Tailwind CSS, custom interactive HTML5 starfield particle physics canvas, Formspree API integration, and edge deployment on Vercel.',
+    tech: ['React', 'Tailwind CSS', 'Vite', 'HTML5 Canvas', 'Formspree', 'Vercel'],
+    live: 'https://venky-portfolio-tau.vercel.app',
+    github: 'https://github.com/komminenivenkatesh/venky-portfolio',
+    badge: 'LIVE ON VERCEL',
+    accentColor: '#7317cf',
+    borderGlow: 'hover:border-purple-500/70 hover:shadow-[0_10px_35px_rgba(115,23,207,0.3)]',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80',
+  },
 ];
 
 const Projects = () => {
@@ -85,6 +99,9 @@ const Projects = () => {
     if (filter === 'all') return true;
     return p.category === filter;
   });
+
+  const webCount = allProjects.filter((p) => p.category === 'web').length;
+  const aiCount = allProjects.filter((p) => p.category === 'ai').length;
 
   return (
     <section id="projects" className="py-24 px-6 lg:px-12 relative z-10 font-mono">
@@ -121,7 +138,7 @@ const Projects = () => {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Web Apps (3)
+              Web Apps ({webCount})
             </button>
             <button
               onClick={() => setFilter('ai')}
@@ -131,7 +148,7 @@ const Projects = () => {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              AI & ML (2)
+              AI & ML ({aiCount})
             </button>
           </div>
         </div>

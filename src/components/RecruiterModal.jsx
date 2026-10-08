@@ -165,6 +165,12 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
                 </span>
               </div>
               <div className="flex items-start gap-2">
+                <FiCheckCircle className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                <span>
+                  <strong>Developer Portfolio:</strong> High-performance interactive portfolio with custom 60 FPS canvas particle physics, Formspree Gmail dispatch, and Vercel edge deployment.
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                 <span>
                   <strong>IBM Certifications (3x):</strong> Machine Learning Professional (Supervised Learning, Neural Networks), Data Science Methodologies, and Introduction to Python.

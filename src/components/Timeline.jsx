@@ -142,6 +142,29 @@ const timelineData = [
     },
   },
   {
+    id: 'venky-portfolio',
+    tabName: 'Developer Portfolio',
+    period: '2026',
+    role: 'Frontend Architect & UI Designer',
+    headline: 'High-Performance Cybernetic Developer Portfolio',
+    summary: 'Architected and deployed an interactive, production developer portfolio utilizing React 19, Tailwind CSS, custom 60 FPS HTML5 canvas starfield particle physics, Formspree Gmail integration, and automated CI/CD pipeline on Vercel.',
+    metrics: [
+      { label: 'Graphics Engine', value: '60 FPS Canvas', desc: 'Custom starfield particle physics' },
+      { label: 'Deployment', value: 'Vercel Edge', desc: 'Automated GitHub continuous deployment' },
+      { label: 'Email Pipeline', value: 'Formspree API', desc: 'Direct Gmail message dispatch' },
+    ],
+    milestones: [
+      'Crafted custom interactive constellation canvas connecting particle nodes based on cursor proximity.',
+      'Constructed responsive command palette (⌘K) and recruiter executive summary mode.',
+      'Configured automated CI/CD deployment pipeline with Vercel edge networks.',
+    ],
+    tech: ['React', 'Vite', 'Tailwind CSS', 'HTML5 Canvas', 'Formspree', 'Vercel'],
+    links: {
+      live: 'https://venky-portfolio-tau.vercel.app',
+      github: 'https://github.com/komminenivenkatesh/venky-portfolio',
+    },
+  },
+  {
     id: 'srm-university',
     tabName: 'SRM University',
     period: 'Aug 2023 – July 2027',
