@@ -167,7 +167,7 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Developer Portfolio:</strong> High-performance interactive portfolio with custom 60 FPS canvas particle physics, Formspree Gmail dispatch, and Vercel edge deployment.
+                  <strong>StockAI Pulse:</strong> AI-driven financial market analytics & sentiment engine predicting momentum trends, volatility regime shifts, and technical indicators.
                 </span>
               </div>
               <div className="flex items-start gap-2">
