@@ -119,10 +119,10 @@ const Projects = () => {
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-2 bg-[#0c0c12] p-1.5 rounded-full border border-white/10 self-start md:self-auto">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-1.5 sm:gap-2 bg-[#0c0c12] p-1.5 rounded-2xl sm:rounded-full border border-white/10 self-start md:self-auto max-w-full">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 filter === 'all'
                   ? 'bg-white text-black shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -132,7 +132,7 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter('web')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 filter === 'web'
                   ? 'bg-white text-black shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -142,7 +142,7 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter('ai')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 filter === 'ai'
                   ? 'bg-white text-black shadow-md'
                   : 'text-slate-400 hover:text-white'

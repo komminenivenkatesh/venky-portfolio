@@ -262,15 +262,17 @@ const Timeline = () => {
                   <FiExternalLink className="w-3.5 h-3.5" />
                 </a>
               )}
-              <a
-                href={current.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-200 hover:text-white border border-white/15 text-xs font-semibold transition-all"
-              >
-                <FiGithub className="w-3.5 h-3.5" />
-                <span>Repository</span>
-              </a>
+              {current.links.github && (
+                <a
+                  href={current.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-200 hover:text-white border border-white/15 text-xs font-semibold transition-all"
+                >
+                  <FiGithub className="w-3.5 h-3.5" />
+                  <span>Repository</span>
+                </a>
+              )}
             </div>
           </div>
 
