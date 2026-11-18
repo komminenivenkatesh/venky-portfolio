@@ -173,12 +173,13 @@ const timelineData = [
     metrics: [
       { label: 'Degree', value: 'B.Tech CSE', desc: 'SRM University (2023 - 2027)' },
       { label: 'Specialization', value: 'Data Science & AI', desc: 'Intelligent systems & analytics' },
-      { label: 'Certifications', value: '3x IBM', desc: 'ML, Data Science, Python' },
+      { label: 'Certifications', value: '5x IBM & Internship', desc: 'Hadoop, ML with R, Python, Sysslan' },
     ],
     milestones: [
       'Coursework: Data Structures & Algorithms, Database Management Systems (DBMS), Operating Systems, Object-Oriented Programming, Machine Learning.',
-      'Earned IBM Machine Learning Professional Certificate (Supervised Learning, Neural Networks).',
-      'Earned IBM Data Science Methodologies Certificate & Introduction to Python Certificate.',
+      'Earned IBM Introduction to Big Data, Hadoop and the Ecosystems Certificate (IBM Developer Skills Network & SRM University).',
+      'Earned IBM Machine Learning with R Certificate & IBM Machine Learning Professional Certificate (Supervised Learning, Neural Networks).',
+      'Earned IBM Data Science Methodologies Certificate & IBM Introduction to Python Certificate.',
     ],
     tech: ['Data Structures', 'Algorithms', 'DBMS', 'Machine Learning', 'Python'],
     links: {},

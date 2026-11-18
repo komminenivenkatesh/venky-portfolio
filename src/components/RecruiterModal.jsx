@@ -173,7 +173,7 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>IBM Certifications (3x):</strong> Machine Learning Professional (Supervised Learning, Neural Networks), Data Science Methodologies, and Introduction to Python.
+                  <strong>Certifications & Credentials:</strong> Sysslan IT Solutions 1-Month Web Dev Internship Certificate, IBM Introduction to Big Data & Hadoop Ecosystems, IBM Machine Learning with R & Professional ML, IBM Data Science Methodologies, and Introduction to Python.
                 </span>
               </div>
             </div>

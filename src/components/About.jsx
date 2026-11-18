@@ -12,24 +12,24 @@ import {
 
 const credentials = [
   {
+    icon: <FiCode className="text-accent" />,
+    title: 'Full-Stack Web Dev Internship Certificate',
+    desc: 'Sysslan IT Solutions (1-Month Commercial Internship). Boosted Lighthouse to 91, cut DOM re-renders by 28%, and built 12+ REST endpoints.',
+  },
+  {
     icon: <FiAward className="text-yellow-400" />,
-    title: 'Machine Learning Professional',
-    desc: 'Professional Certificate — IBM & Coursera (Supervised Learning, Deep Neural Networks, Loss Optimization).',
+    title: 'Introduction to Big Data, Hadoop & Ecosystems',
+    desc: 'Professional Certificate — IBM Developer Skills Network & SRM University (Distributed Computing, HDFS, MapReduce).',
   },
   {
     icon: <FiAward className="text-cyan-400" />,
-    title: 'Data Science Methodologies',
-    desc: 'Professional Certificate — IBM. Iterative analytic models, feature pipelines, and statistical validation.',
+    title: 'Machine Learning with R & ML Professional',
+    desc: 'Professional Certificates — IBM & Coursera (Supervised Learning, Deep Neural Networks, Loss Optimization).',
   },
   {
     icon: <FiAward className="text-emerald-400" />,
-    title: 'Introduction to Python',
-    desc: 'Professional Certificate — IBM. Foundational algorithmic programming, data structures, and script tooling.',
-  },
-  {
-    icon: <FiCode className="text-accent" />,
-    title: 'Full-Stack Web Dev Intern',
-    desc: 'Sysslan IT Solutions (2026). Boosted Lighthouse to 91, cut DOM re-renders by 28%, and built 12+ REST endpoints.',
+    title: 'Data Science Methodologies & Python',
+    desc: 'Professional Certificates — Issued by IBM. Iterative analytic models, data structures, and statistical validation.',
   },
 ];
 

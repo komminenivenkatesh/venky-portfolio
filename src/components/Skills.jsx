@@ -28,7 +28,9 @@ import {
   SiC,
   SiPostman,
   SiKeras,
-  SiPandas
+  SiPandas,
+  SiApachehadoop,
+  SiR
 } from 'react-icons/si';
 
 // Radial Circular Skills matching Figma prototype
@@ -85,19 +87,19 @@ const skillCategories = [
       { name: 'Python', icon: SiPython, level: 'Proficient (92%)' },
       { name: 'JavaScript (ES6+)', icon: SiJavascript, level: 'Advanced (90%)' },
       { name: 'C Language', icon: SiC, level: 'Proficient (82%)' },
+      { name: 'R Language', icon: SiR, level: 'Proficient (82%)' },
       { name: 'React', icon: SiReact, level: 'Advanced (90%)' },
       { name: 'Tailwind CSS', icon: SiTailwindcss, level: 'Advanced (92%)' },
-      { name: 'HTML5 & Modern CSS', icon: SiHtml5, level: 'Advanced (95%)' },
     ],
   },
   {
-    title: 'Backend & Data Architecture',
+    title: 'Backend & Big Data Architecture',
     icon: <FiDatabase className="text-emerald-400" />,
     skills: [
       { name: 'Node.js', icon: SiNodedotjs, level: 'Proficient (88%)' },
       { name: 'Express.js', icon: SiExpress, level: 'Proficient (88%)' },
+      { name: 'Hadoop & Big Data', icon: SiApachehadoop, level: 'Proficient (84%)' },
       { name: 'MongoDB', icon: SiMongodb, level: 'Proficient (85%)' },
-      { name: 'MySQL', icon: SiMysql, level: 'Proficient (80%)' },
       { name: 'RESTful Architecture', icon: FiTerminal, level: 'Advanced (90%)' },
       { name: 'JWT Authentication', icon: FiCheckCircle, level: 'Proficient (85%)' },
     ],

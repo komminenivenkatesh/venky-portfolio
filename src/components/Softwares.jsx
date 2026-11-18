@@ -12,7 +12,8 @@ import {
   SiBlender, 
   SiLinux,
   SiVercel,
-  SiPython
+  SiPython,
+  SiApachehadoop
 } from 'react-icons/si';
 import { FiCheckCircle, FiLayers } from 'react-icons/fi';
 
@@ -126,6 +127,17 @@ const softwareList = [
     color: '#FCC624',
     bgGlow: 'hover:border-[#FCC624]/60 hover:shadow-[0_8px_30px_rgba(252,198,36,0.25)]',
     badge: 'SYSTEMS'
+  },
+  {
+    id: 'hadoop',
+    name: 'Apache Hadoop & HDFS',
+    category: 'Big Data & Distributed Computing',
+    role: 'Distributed Cluster Framework',
+    description: 'HDFS cluster management, MapReduce data processing, and big data ecosystem integration (IBM Certified).',
+    icon: SiApachehadoop,
+    color: '#FFEA00',
+    bgGlow: 'hover:border-[#FFEA00]/60 hover:shadow-[0_8px_30px_rgba(255,234,0,0.25)]',
+    badge: 'BIG DATA'
   },
   {
     id: 'jupyter',
