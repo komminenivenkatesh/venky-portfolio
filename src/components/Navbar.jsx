@@ -14,39 +14,37 @@ const Navbar = ({ onOpenCommandPalette, recruiterMode, onToggleRecruiter }) => {
   }, []);
 
   const navLinks = [
+    { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Timeline', href: '#timeline' },
     { name: 'Skills', href: '#skills' },
-    { name: 'About', href: '#about' },
+    { name: 'Softwares', href: '#softwares' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 font-mono ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 font-sans ${
         isScrolled
-          ? 'bg-[#0a0a0f]/90 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl'
+          ? 'bg-black/90 backdrop-blur-md border-b border-white/10 py-3.5 shadow-2xl'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Brand */}
+        {/* Brand Matching Figma */}
         <a href="#hero" className="flex items-center gap-2 group">
           <div className="flex items-center gap-1 font-brand text-2xl font-black tracking-tight text-white group-hover:scale-105 transition-transform duration-200">
-            <span className="text-accent font-mono text-lg font-bold group-hover:text-cyan-accent transition-colors">&gt;</span>
-            <span className="bg-gradient-to-r from-white via-purple-100 to-accent bg-clip-text text-transparent drop-shadow-sm">
-              Venky
-            </span>
-            <span className="w-2 h-2 rounded-full bg-accent group-hover:bg-cyan-accent group-hover:animate-ping inline-block transition-colors shadow-glow-purple ml-0.5"></span>
+            <span>Portfolio</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:bg-cyan-400 inline-block transition-colors ml-0.5"></span>
           </div>
-          <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono bg-accent/15 text-accent border border-accent/30 rounded-full font-bold">
-            dev
+          <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono bg-white/5 text-slate-300 border border-white/10 rounded-full font-bold">
+            venky.dev
           </span>
         </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex items-center gap-6 text-xs font-semibold tracking-wide uppercase font-mono">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -60,11 +58,11 @@ const Navbar = ({ onOpenCommandPalette, recruiterMode, onToggleRecruiter }) => {
               href="/venkatesh-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-accent/15 hover:bg-accent/25 text-accent border border-accent/40 text-xs font-semibold transition-colors hover:-translate-y-0.5 transform duration-150"
+              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-black hover:bg-slate-200 text-xs font-bold transition-all hover:scale-105"
               title="Open Resume PDF in new tab"
             >
               <FiDownload className="w-3 h-3" />
-              <span>resume.pdf</span>
+              <span>Resume</span>
             </a>
           </div>
 

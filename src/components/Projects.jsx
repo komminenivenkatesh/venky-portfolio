@@ -103,27 +103,28 @@ const Projects = () => {
   const aiCount = allProjects.filter((p) => p.category === 'ai').length;
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-12 relative z-10 font-mono">
+    <section id="projects" className="py-24 px-6 lg:px-12 relative z-10 bg-black text-slate-200">
       <div className="container mx-auto max-w-6xl">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 pb-6 border-b border-white/10">
           <div>
-            <p className="text-xs text-accent font-mono uppercase tracking-widest mb-2">
+            <p className="text-xs text-accent font-mono uppercase tracking-widest mb-2 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
               // PRODUCTION WORK & GITHUB PROJECTS
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Featured <span className="text-accent underline decoration-accent/40 decoration-wavy underline-offset-8">Projects</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-brand">
+              Featured <span className="text-slate-400">Projects</span>
             </h2>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-2 bg-[#12121c] p-1.5 rounded-2xl border border-white/10 self-start md:self-auto">
+          <div className="flex items-center gap-2 bg-[#0c0c12] p-1.5 rounded-full border border-white/10 self-start md:self-auto">
             <button
               onClick={() => setFilter('all')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 filter === 'all'
-                  ? 'bg-accent text-white shadow-glow-purple'
+                  ? 'bg-white text-black shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -131,9 +132,9 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter('web')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 filter === 'web'
-                  ? 'bg-accent text-white shadow-glow-purple'
+                  ? 'bg-white text-black shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -141,9 +142,9 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter('ai')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 filter === 'ai'
-                  ? 'bg-accent text-white shadow-glow-purple'
+                  ? 'bg-white text-black shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -157,10 +158,10 @@ const Projects = () => {
           {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
-              className={`group relative bg-[#12121c]/90 rounded-2xl border border-white/10 ${project.borderGlow} transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-2`}
+              className={`group relative bg-[#0c0c12] rounded-3xl border border-white/10 ${project.borderGlow} transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-2 shadow-xl`}
             >
               {/* Card Banner Image with Dark Vignette */}
-              <div className="relative h-48 w-full overflow-hidden bg-[#181824]">
+              <div className="relative h-48 w-full overflow-hidden bg-[#14141e]">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -170,18 +171,18 @@ const Projects = () => {
                   }}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 filter brightness-90 group-hover:brightness-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#12121c] via-[#12121c]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c12] via-[#0c0c12]/40 to-transparent"></div>
 
                 {/* Badge Overlay */}
                 <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider bg-black/75 backdrop-blur-md text-white border border-white/15">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider bg-black/80 backdrop-blur-md text-white border border-white/20">
                     {project.badge}
                   </span>
                 </div>
 
                 {/* Live Indicator if live */}
                 {project.live && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
                     <span>ONLINE</span>
                   </div>
@@ -191,24 +192,24 @@ const Projects = () => {
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors flex items-center justify-between">
-                    <span>{project.title}</span>
+                  <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors font-brand">
+                    {project.title}
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1 mb-3 font-semibold">
+                  <p className="text-xs text-accent mt-1 mb-3 font-mono font-medium">
                     {project.tagline}
                   </p>
-                  <p className="text-slate-300 text-xs leading-relaxed line-clamp-3 mb-4 font-sans">
+                  <p className="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-4 font-sans">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Tech Badges */}
                 <div>
-                  <div className="flex flex-wrap gap-1.5 mb-5">
+                  <div className="flex flex-wrap gap-1.5 mb-5 font-mono">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 rounded bg-white/5 text-[11px] text-slate-300 border border-white/5"
+                        className="px-2 py-0.5 rounded-md bg-white/5 text-[11px] text-slate-300 border border-white/5"
                       >
                         {t}
                       </span>
@@ -216,7 +217,7 @@ const Projects = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center gap-2 pt-3 border-t border-white/10">
+                  <div className="flex items-center gap-2 pt-3 border-t border-white/10 font-mono">
                     {project.live && (
                       <a
                         href={project.live}

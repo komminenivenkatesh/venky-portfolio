@@ -58,41 +58,47 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-12 relative z-10 font-mono">
+    <section id="contact" className="py-24 px-6 lg:px-12 relative z-10 bg-black text-slate-200">
       <div className="container mx-auto max-w-6xl">
         
         {/* Header */}
-        <div className="mb-12 pb-6 border-b border-white/10">
-          <p className="text-xs text-accent uppercase tracking-widest mb-2">
-            // INITIATE CONNECTION
+        <div className="mb-14 pb-6 border-b border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <p className="text-xs text-accent font-mono uppercase tracking-widest mb-2 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
+              // INITIATE CONNECTION
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-brand">
+              Get In <span className="text-slate-400">Touch</span>
+            </h2>
+          </div>
+          <p className="text-xs font-mono text-slate-400 max-w-sm">
+            Reach out directly for software engineering opportunities, technical collaborations, or queries.
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Get In <span className="text-accent underline decoration-accent/40 decoration-wavy underline-offset-8">Touch</span>
-          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Left Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#12121c]/90 rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl">
-              <h3 className="text-xl font-bold text-white mb-4">
+            <div className="bg-[#0c0c12] rounded-3xl border border-white/10 p-6 sm:p-8 shadow-xl">
+              <h3 className="text-xl font-bold text-white mb-3 font-brand">
                 Let's Build Something Exceptional
               </h3>
               <p className="text-slate-400 text-xs sm:text-sm font-sans leading-relaxed mb-6">
-                I'm actively seeking opportunities for software engineering roles, full-stack development, and machine learning projects. Whether you have an open position, a collaboration idea, or just want to discuss tech, my inbox is open!
+                I'm actively seeking opportunities for software engineering roles, full-stack development, and machine learning projects. Whether you have an open position or a project to discuss, my inbox is open!
               </p>
 
-              <div className="space-y-4 text-xs font-mono">
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="p-2 rounded-lg bg-accent/20 text-accent">
+              <div className="space-y-3.5 text-xs font-mono">
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/[0.02] border border-white/5">
+                  <div className="p-2.5 rounded-xl bg-white/5 text-accent border border-white/10">
                     <FiMail className="w-4 h-4" />
                   </div>
-                  <div>
-                    <div className="text-[10px] text-slate-500 uppercase">DIRECT EMAIL</div>
+                  <div className="flex-1">
+                    <div className="text-[10px] text-slate-500 uppercase tracking-wider">DIRECT EMAIL</div>
                     <a
                       href="mailto:komminenivenkatesh045@gmail.com"
-                      className="text-white hover:text-accent font-semibold transition-colors"
+                      className="text-white hover:text-accent font-semibold transition-colors break-all"
                     >
                       komminenivenkatesh045@gmail.com
                     </a>
@@ -165,15 +171,15 @@ const Contact = () => {
 
           {/* Right Form (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="bg-[#12121c]/90 rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl">
-              <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10 text-xs text-accent">
-                <FiTerminal className="w-4 h-4" />
-                <span>TERMINAL_DISPATCH // SEND_MESSAGE.SH</span>
+            <div className="bg-[#0c0c12] rounded-3xl border border-white/10 p-6 sm:p-8 shadow-xl">
+              <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10 text-xs text-accent font-mono">
+                <FiMessageSquare className="w-4 h-4" />
+                <span>DIRECT_MESSAGE // FORMSPREE PIPELINE</span>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 mb-2">
+                  <label className="block text-xs font-mono font-semibold text-slate-400 mb-2">
                     YOUR NAME <span className="text-accent">*</span>
                   </label>
                   <input
@@ -183,12 +189,12 @@ const Contact = () => {
                     placeholder="e.g. Alex Morgan"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#0a0a0f] border border-white/15 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-sans placeholder:text-slate-600"
+                    className="w-full bg-[#14141e] border border-white/15 rounded-2xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-sans placeholder:text-slate-600"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 mb-2">
+                  <label className="block text-xs font-mono font-semibold text-slate-400 mb-2">
                     EMAIL ADDRESS <span className="text-accent">*</span>
                   </label>
                   <input
@@ -198,29 +204,29 @@ const Contact = () => {
                     placeholder="e.g. alex@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#0a0a0f] border border-white/15 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-sans placeholder:text-slate-600"
+                    className="w-full bg-[#14141e] border border-white/15 rounded-2xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-sans placeholder:text-slate-600"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 mb-2">
+                  <label className="block text-xs font-mono font-semibold text-slate-400 mb-2">
                     MESSAGE PAYLOAD <span className="text-accent">*</span>
                   </label>
                   <textarea
                     rows={4}
                     name="message"
                     required
-                    placeholder="Tell me about your project, role, or say hello..."
+                    placeholder="Tell me about your project, engineering role, or say hello..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-[#0a0a0f] border border-white/15 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-sans placeholder:text-slate-600 resize-none"
+                    className="w-full bg-[#14141e] border border-white/15 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-sans placeholder:text-slate-600 resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 rounded-xl bg-accent hover:bg-accent-light text-white font-bold text-sm shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-4 rounded-full bg-white text-black font-bold text-sm hover:bg-slate-200 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] disabled:opacity-50 disabled:cursor-not-allowed active:scale-98"
                 >
                   <FiSend className="w-4 h-4" />
                   <span>{loading ? 'Transmitting to Gmail...' : 'Send Message'}</span>

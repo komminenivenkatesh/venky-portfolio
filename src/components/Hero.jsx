@@ -8,54 +8,24 @@ import {
   FiTerminal, 
   FiCheckCircle, 
   FiArrowRight, 
-  FiExternalLink 
+  FiExternalLink,
+  FiBriefcase
 } from 'react-icons/fi';
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiJavascript, 
-  SiPython, 
-  SiThreedotjs,
-  SiTensorflow, 
-  SiOpencv, 
-  SiNodedotjs, 
-  SiMongodb, 
-  SiDocker, 
-  SiGit, 
-  SiLinux 
-} from 'react-icons/si';
-import MusicPlayer from './MusicPlayer';
 
 const phrases = [
-  'Building Digital Experiences',
-  'Crafting Web & AI Solutions',
-  'Full-Stack Developer & ML Enthusiast',
-  'Turning Complex Ideas into Clean Code',
+  'Full-Stack Web Developer',
+  'AI & Machine Learning Engineer',
+  'Computer Vision Specialist',
+  'Software Engineer',
 ];
 
-const techIcons = [
-  { name: 'React', icon: SiReact, color: '#61dafb' },
-  { name: 'Three.js', icon: SiThreedotjs, color: '#ffffff' },
-  { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-  { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
-  { name: 'Python', icon: SiPython, color: '#3776ab' },
-  { name: 'TensorFlow', icon: SiTensorflow, color: '#ff6f00' },
-  { name: 'OpenCV', icon: SiOpencv, color: '#5c3ee8' },
-  { name: 'MongoDB', icon: SiMongodb, color: '#47a248' },
-  { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
-  { name: 'Git', icon: SiGit, color: '#f05032' },
-  { name: 'Docker', icon: SiDocker, color: '#2496ed' },
-  { name: 'Linux', icon: SiLinux, color: '#fcc624' },
-];
-
-const Hero = ({ onTriggerResume, resumeStatus }) => {
+const Hero = ({ onTriggerResume, resumeStatus, onToggleRecruiter }) => {
   const [displayText, setDisplayText] = useState('');
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
 
-  // Typing effect
+  // Smooth typing effect
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
 
@@ -66,7 +36,7 @@ const Hero = ({ onTriggerResume, resumeStatus }) => {
           setCharIndex((prev) => prev + 1);
 
           if (charIndex + 1 === currentPhrase.length) {
-            setTimeout(() => setIsDeleting(true), 1800);
+            setTimeout(() => setIsDeleting(true), 2000);
           }
         } else {
           setDisplayText(currentPhrase.substring(0, charIndex - 1));
@@ -85,231 +55,177 @@ const Hero = ({ onTriggerResume, resumeStatus }) => {
   }, [charIndex, isDeleting, phraseIndex]);
 
   return (
-    <section id="hero" className="min-h-screen pt-28 pb-16 px-6 lg:px-12 flex flex-col justify-center relative z-10 font-mono">
+    <section id="hero" className="min-h-screen pt-32 pb-20 px-6 lg:px-12 flex flex-col justify-center relative z-10 bg-black text-white">
+      {/* Subtle Ambient Radial Lighting */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl pointer-events-none" />
+
       <div className="container mx-auto max-w-6xl">
-        {/* Befikir Large Monospace Typing Headline */}
-        <div className="mb-10">
-          <p className="text-xs sm:text-sm text-accent tracking-widest uppercase mb-3 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent inline-block animate-ping"></span>
-            PORTFOLIO // 2026 // PRODUCTION
-          </p>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight min-h-[3.2em] sm:min-h-[2.5em]">
-            <span className="text-slate-300">&gt; </span>
-            <span>{displayText}</span>
-            <span className="inline-block text-accent animate-pulse font-normal ml-1">_</span>
-          </h1>
-        </div>
-
-        {/* Profile + Skills + Resume + Music Player Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Profile Card + Shell Resume + Tech Icons (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Left Column: Hello, It's Me + Headline + Bio + Actions (7 Cols) */}
+          <div className="lg:col-span-7 flex flex-col items-start justify-center space-y-6">
             
-            {/* Profile Avatar & Details */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-              <div className="relative inline-block group">
-                <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-[3px] border-accent shadow-glow-purple bg-[#1a1a2e] transition-transform duration-300 group-hover:scale-105">
-                  <img
-                    src="/profile.jpg"
-                    alt="Kommineni Venkateswarlu"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                {/* GPA / Status Badge */}
-                <div className="absolute -bottom-2 right-0 sm:right-1 bg-badge text-white px-3 py-1 rounded-full text-[11px] font-bold shadow-lg border border-white/20 flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>OPEN TO WORK</span>
-                </div>
-              </div>
+            {/* Small Greeting */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Hello, It's Me</span>
+            </div>
 
-              <div>
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                    Kommineni Venkateswarlu
-                  </h2>
-                  <span className="px-2.5 py-0.5 rounded-full font-brand text-xs font-black bg-gradient-to-r from-accent/30 to-purple-600/30 text-purple-200 border border-accent/50 shadow-sm">
-                    Venky
-                  </span>
-                </div>
-                <p className="text-slate-400 text-sm mt-1">
-                  Full-Stack Web Developer & Practical AI Engineer
-                </p>
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-500 text-xs mt-1">
-                  <span>📍 Sonipat, Delhi NCR</span>
-                  <span>•</span>
-                  <span>🎓 SRM University (Data Science & AI)</span>
-                </div>
-
-                {/* Social & Contact Quick Icons */}
-                <div className="flex items-center gap-3 mt-3">
-                  <a
-                    href="https://github.com/komminenivenkatesh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
-                    title="GitHub: github.com/komminenivenkatesh"
-                  >
-                    <FiGithub className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/komminenivenkatesh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
-                    title="LinkedIn: linkedin.com/in/komminenivenkatesh"
-                  >
-                    <FiLinkedin className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="mailto:komminenivenkatesh045@gmail.com"
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
-                    title="Email: komminenivenkatesh045@gmail.com"
-                  >
-                    <FiMail className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="tel:+919100873719"
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
-                    title="Phone: (+91) 9100873719"
-                  >
-                    <FiPhone className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="https://vahan-bhazar.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent/15 hover:bg-accent/25 text-accent border border-accent/40 text-xs font-semibold transition-colors"
-                  >
-                    <span>Vahan Bhazar Live</span>
-                    <FiExternalLink className="w-3 h-3" />
-                  </a>
-                </div>
+            {/* Main Name & Title */}
+            <div>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight font-brand leading-none mb-3">
+                Venkatesh
+                <span className="block text-slate-400 font-bold text-3xl sm:text-5xl lg:text-6xl mt-2">
+                  Kommineni
+                </span>
+              </h1>
+              
+              <div className="flex items-center gap-2 text-lg sm:text-2xl font-mono text-slate-300 min-h-[2rem]">
+                <span className="text-slate-400 font-light">And I'm a</span>
+                <span className="font-bold text-white border-b-2 border-accent pb-0.5">
+                  {displayText}
+                </span>
+                <span className="w-2 h-6 bg-accent inline-block animate-pulse ml-0.5" />
               </div>
             </div>
 
-            {/* Clean Single Resume Launcher */}
-            <div className="pt-2">
-              <p className="text-xs text-slate-400 mb-2 font-mono flex items-center gap-2">
-                <FiTerminal className="text-accent" />
-                <span>RÉSUMÉ & CV</span>
-              </p>
+            {/* Bio Narrative */}
+            <p className="text-sm sm:text-base text-slate-400 font-sans leading-relaxed max-w-xl">
+              Undergraduate in Computer Science & Engineering (Data Science & AI) at SRM University.
+              Experienced full-stack software engineer crafting responsive web architectures, real-time computer vision systems, and deep learning diagnostic pipelines.
+            </p>
 
+            {/* Social Icons Row */}
+            <div className="flex items-center gap-3 pt-1">
+              <a
+                href="https://github.com/komminenivenkatesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-white text-slate-300 hover:text-black border border-white/10 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+                title="GitHub"
+              >
+                <FiGithub className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/komminenivenkatesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#0077b5] text-slate-300 hover:text-white border border-white/10 hover:border-[#0077b5] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+                title="LinkedIn"
+              >
+                <FiLinkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:komminenivenkatesh045@gmail.com"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-white text-slate-300 hover:text-black border border-white/10 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+                title="Email"
+              >
+                <FiMail className="w-4 h-4" />
+              </a>
+              <a
+                href="tel:+919100873719"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-white text-slate-300 hover:text-black border border-white/10 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+                title="Phone"
+              >
+                <FiPhone className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Actions: Prominent Pill Resume Button + Recruiter / Explore */}
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onTriggerResume}
-                className="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-4 px-5 py-3 rounded-xl bg-[#0f0f18] hover:bg-[#151525] border border-white/15 hover:border-accent shadow-md hover:shadow-glow-purple transition-all duration-300 text-left font-mono"
-                title="Download Venkatesh Resume (PDF)"
+                className="group px-7 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-slate-200 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300 flex items-center gap-2.5 active:scale-95"
               >
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-accent font-bold">&gt;</span>
-                  <span className="text-white font-mono group-hover:text-purple-300 transition-colors">
-                    curl -O venkatesh-resume.pdf
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 bg-white/10 rounded-md text-xs text-slate-300 group-hover:bg-accent group-hover:text-white transition-all">
-                  <FiDownload className="w-3.5 h-3.5" />
-                  <span>Download</span>
-                </div>
+                <FiDownload className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                <span>Resume</span>
               </button>
 
-              {/* Status readout */}
-              {resumeStatus && (
-                <div className="mt-2 text-xs font-mono text-emerald-400 flex items-center gap-2 animate-pulse">
-                  <FiCheckCircle className="w-3.5 h-3.5" />
-                  <span>{resumeStatus}</span>
-                </div>
+              <a
+                href="#projects"
+                className="px-6 py-3 rounded-full bg-transparent hover:bg-white/10 text-white border border-white/25 hover:border-white text-sm font-semibold transition-all duration-300 flex items-center gap-2"
+              >
+                <span>View Projects</span>
+                <FiArrowRight className="w-4 h-4" />
+              </a>
+
+              {onToggleRecruiter && (
+                <button
+                  onClick={onToggleRecruiter}
+                  className="px-5 py-3 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 text-xs font-mono transition-all duration-200 flex items-center gap-2"
+                >
+                  <FiBriefcase className="w-3.5 h-3.5 text-accent" />
+                  <span>Recruiter Mode</span>
+                </button>
               )}
             </div>
 
-            {/* Tech Icons Grid (Befikir squircle lang-tags) */}
-            <div className="pt-2">
-              <p className="text-xs text-slate-400 mb-3 tracking-wider">
-                CORE TECHNOLOGIES & TOOLCHAIN
-              </p>
-              <div className="flex flex-wrap gap-2.5">
-                {techIcons.map((tech) => {
-                  const Icon = tech.icon;
-                  return (
-                    <div
-                      key={tech.name}
-                      className="group relative w-12 h-12 rounded-xl bg-white/[0.04] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 flex items-center justify-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:scale-105 shadow-md"
-                    >
-                      <Icon 
-                        className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" 
-                        style={{ color: tech.color }}
-                      />
-                      {/* Tooltip */}
-                      <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-black/90 text-white text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/15 z-20">
-                        {tech.name}
-                      </span>
-                    </div>
-                  );
-                })}
+            {/* Resume status feedback banner */}
+            {resumeStatus && (
+              <div className="text-xs font-mono text-emerald-400 flex items-center gap-2 animate-pulse bg-emerald-950/40 border border-emerald-500/30 px-3.5 py-1.5 rounded-xl">
+                <FiCheckCircle className="w-3.5 h-3.5" />
+                <span>{resumeStatus}</span>
+              </div>
+            )}
+
+            {/* Quick Metrics Tagline */}
+            <div className="pt-3 flex flex-wrap items-center gap-6 text-xs font-mono text-slate-500 border-t border-white/10 w-full">
+              <div>
+                <span className="text-white font-bold block text-sm">SRM '27</span>
+                <span>B.Tech CSE (AI & DS)</span>
+              </div>
+              <div className="h-6 w-px bg-white/10" />
+              <div>
+                <span className="text-white font-bold block text-sm">6 Projects</span>
+                <span>Full-Stack & ML</span>
+              </div>
+              <div className="h-6 w-px bg-white/10" />
+              <div>
+                <span className="text-emerald-400 font-bold block text-sm">Available</span>
+                <span>Intern & Full-Time</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Spotify Music Player + Quick Terminal Stats (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-start lg:items-end space-y-6">
-            {/* Music Player */}
-            <MusicPlayer />
+          {/* Right Column: High-Contrast Studio Portrait (5 Cols) */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
+            <div className="relative group max-w-sm sm:max-w-md w-full">
+              
+              {/* Ambient Studio Lighting Ring */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-white/15 via-white/5 to-transparent blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Studio Frame Card */}
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-[#14141e] to-black border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+                
+                {/* Image Container with Vignette Fade on Bottom */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <img
+                    src="/profile.jpg"
+                    alt="Venkatesh Kommineni"
+                    className="w-full h-full object-cover object-top filter grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:contrast-105 group-hover:brightness-100 transition-all duration-700 ease-out transform group-hover:scale-105"
+                  />
+                  {/* Bottom Vignette Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                  
+                  {/* Ambient Top Glow Line */}
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+                </div>
 
-            {/* Terminal Quick Specs Card */}
-            <div className="w-full max-w-[320px] bg-[#0d0d14]/90 border border-white/10 rounded-2xl p-4 shadow-xl">
-              <div className="flex items-center justify-between pb-2 mb-3 border-b border-white/10 text-xs text-slate-400">
-                <span className="text-accent font-bold">// SYSTEM SPECS</span>
-                <span className="text-[10px] text-emerald-400">ACTIVE</span>
-              </div>
-              <div className="space-y-2 text-xs text-slate-300 font-mono">
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Education:</span>
-                  <span className="text-white font-bold">SRM University '27</span>
+                {/* Floating Bottom Card Tag */}
+                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-2xl bg-black/80 backdrop-blur-md border border-white/15 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-white font-brand">Kommineni Venkatesh</p>
+                    <p className="text-[11px] font-mono text-slate-400">Software & AI Engineer</p>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-white/10 text-white border border-white/20">
+                    SRM UNIV
+                  </span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Specialization:</span>
-                  <span className="text-accent font-semibold">Data Science & AI</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Experience:</span>
-                  <span className="text-cyan-accent font-semibold">Sysslan IT Solutions</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Certifications:</span>
-                  <span className="text-purple-300 font-semibold">IBM Certified (3x)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Live Project:</span>
-                  <a 
-                    href="https://vahan-bhazar.vercel.app" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-emerald-400 hover:underline flex items-center gap-1 font-semibold"
-                  >
-                    Vahan Bazar ↗
-                  </a>
-                </div>
-              </div>
 
-              {/* View Projects CTA */}
-              <div className="mt-4 pt-3 border-t border-white/10 flex gap-2">
-                <a
-                  href="#projects"
-                  className="flex-1 py-2 rounded-xl bg-accent hover:bg-accent-light text-white text-xs font-semibold text-center transition-colors shadow-md shadow-accent/20 flex items-center justify-center gap-1"
-                >
-                  <span>Explore Projects</span>
-                  <FiArrowRight className="w-3 h-3" />
-                </a>
-                <a
-                  href="#contact"
-                  className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-semibold text-center border border-white/10 transition-colors"
-                >
-                  Contact
-                </a>
               </div>
             </div>
-
           </div>
 
         </div>

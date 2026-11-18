@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import StarfieldCanvas from './components/StarfieldCanvas';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 import Projects from './components/Projects';
 import Timeline from './components/Timeline';
 import Skills from './components/Skills';
-import About from './components/About';
+import Softwares from './components/Softwares';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CommandPalette from './components/CommandPalette';
@@ -45,7 +46,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] text-slate-200 selection:bg-accent/40 selection:text-white font-mono relative overflow-x-hidden">
+    <div className="min-h-screen bg-black text-slate-200 selection:bg-white selection:text-black font-sans relative overflow-x-hidden">
       {/* 3D Starfield Background Canvas */}
       <StarfieldCanvas />
 
@@ -60,24 +61,28 @@ function App() {
       <Hero
         onTriggerResume={handleTriggerResume}
         resumeStatus={resumeStatus}
+        onToggleRecruiter={() => setRecruiterMode(!recruiterMode)}
       />
+
+      {/* About Section */}
+      <About />
 
       {/* Projects Showcase */}
       <Projects />
 
-      {/* Build Timeline */}
+      {/* Experience & Build Timeline */}
       <Timeline />
 
-      {/* Skills Matrix */}
+      {/* Skills Matrix with Radial Progress Gauges */}
       <Skills />
 
-      {/* About & Interests */}
-      <About />
+      {/* Softwares Known / Toolchain */}
+      <Softwares />
 
       {/* Contact Section */}
       <Contact />
 
-      {/* Terminal Footer */}
+      {/* Minimalist Footer */}
       <Footer onTriggerResume={handleTriggerResume} />
 
       {/* Command Palette Modal (Ctrl+K) */}

@@ -191,29 +191,35 @@ const Timeline = () => {
   const current = timelineData.find((t) => t.id === activeTab) || timelineData[0];
 
   return (
-    <section id="timeline" className="py-24 px-6 lg:px-12 relative z-10 font-mono bg-white/[0.01]">
+    <section id="timeline" className="py-24 px-6 lg:px-12 relative z-10 bg-black text-slate-200">
       <div className="container mx-auto max-w-6xl">
         
         {/* Header */}
-        <div className="mb-12 pb-6 border-b border-white/10">
-          <p className="text-xs text-accent uppercase tracking-widest mb-2">
-            // ENGINEERING MILESTONES & ARCHITECTURE
+        <div className="mb-14 pb-6 border-b border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <p className="text-xs text-accent font-mono uppercase tracking-widest mb-2 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent inline-block"></span>
+              // ENGINEERING MILESTONES & ARCHITECTURE
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-brand">
+              Experience <span className="text-slate-400">& Timeline</span>
+            </h2>
+          </div>
+          <p className="text-xs font-mono text-slate-400 max-w-sm">
+            Interactive breakdown of internship impacts, key projects, and academic specializations.
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Build <span className="text-accent underline decoration-accent/40 decoration-wavy underline-offset-8">Timeline</span>
-          </h2>
         </div>
 
-        {/* Project Tabs (Befikir style tabs) */}
+        {/* Project Tabs (Clean pill tabs) */}
         <div className="flex flex-wrap gap-2 mb-8">
           {timelineData.map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
+              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 border ${
                 activeTab === item.id
-                  ? 'bg-accent text-white border-accent shadow-glow-purple scale-[1.02]'
-                  : 'bg-[#12121c] text-slate-400 hover:text-white border-white/10 hover:border-white/25'
+                  ? 'bg-white text-black border-white shadow-md scale-[1.02]'
+                  : 'bg-[#0c0c12] text-slate-400 hover:text-white border-white/10 hover:border-white/25'
               }`}
             >
               <span>{item.tabName}</span>
@@ -222,7 +228,7 @@ const Timeline = () => {
         </div>
 
         {/* Active Project Impact Card */}
-        <div className="bg-[#12121c]/90 rounded-2xl border border-white/10 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="bg-[#0c0c12] rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           {/* Subtle gradient light */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
 

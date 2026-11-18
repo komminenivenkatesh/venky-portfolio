@@ -7,18 +7,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inconsolata', 'monospace'],
+        sans: ['Inter', 'Space Grotesk', 'sans-serif'],
         mono: ['Inconsolata', 'JetBrains Mono', 'monospace'],
-        brand: ['Space Grotesk', 'sans-serif'],
+        brand: ['Space Grotesk', 'Inter', 'sans-serif'],
       },
       colors: {
+        pure: '#000000',
         dark: {
-          950: '#07070a',
-          900: '#0a0a0f',
-          850: '#0f0f17',
-          800: '#14141f',
-          700: '#1e1e2d',
-          600: '#2d2d3f',
+          950: '#030305',
+          900: '#07070a',
+          850: '#0c0c12',
+          800: '#12121a',
+          700: '#1b1b26',
+          600: '#282838',
         },
         accent: {
           DEFAULT: '#7317cf',
