@@ -10,7 +10,8 @@ import {
   FiLinkedin,
   FiEye, 
   FiCheck,
-  FiX
+  FiX,
+  FiExternalLink
 } from 'react-icons/fi';
 
 const CommandPalette = ({ isOpen, onClose, onToggleRecruiter, recruiterMode, onTriggerResume }) => {
@@ -85,6 +86,24 @@ const CommandPalette = ({ isOpen, onClose, onToggleRecruiter, recruiterMode, onT
       icon: <FiEye className="text-accent" />,
       action: () => {
         onToggleRecruiter();
+        onClose(false);
+      },
+    },
+    {
+      id: 'sushuruth-live',
+      label: 'Open Live App: Sushuruth Medical System (Render)',
+      icon: <FiExternalLink className="text-emerald-400" />,
+      action: () => {
+        window.open('https://sushuruth-frontend.onrender.com', '_blank');
+        onClose(false);
+      },
+    },
+    {
+      id: 'vahan-live',
+      label: 'Open Live App: Vahan Bazar (Vercel)',
+      icon: <FiExternalLink className="text-blue-400" />,
+      action: () => {
+        window.open('https://vahan-bhazar.vercel.app', '_blank');
         onClose(false);
       },
     },

@@ -143,7 +143,7 @@ const RecruiterModal = ({ isOpen, onClose, onTriggerResume }) => {
               <div className="flex items-start gap-2">
                 <FiCheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong>Hospital Medical System (Sushuruth):</strong> End-to-end healthcare platform handling admissions, digital medical records (EMR), scheduled consultations, and role-based access control (RBAC).
+                  <strong>Hospital Medical System (Sushuruth):</strong> Live full-stack platform on Render handling EMR digital admissions, doctor consultations, RBAC authorization, and automated medical intelligence.
                 </span>
               </div>
               <div className="flex items-start gap-2">

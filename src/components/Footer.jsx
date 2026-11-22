@@ -69,6 +69,15 @@ const Footer = ({ onTriggerResume }) => {
             </a>
             <span>•</span>
             <a
+              href="https://sushuruth-frontend.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Sushuruth HMS Live
+            </a>
+            <span>•</span>
+            <a
               href="mailto:komminenivenkatesh045@gmail.com"
               className="text-slate-400 hover:text-white transition-colors"
             >

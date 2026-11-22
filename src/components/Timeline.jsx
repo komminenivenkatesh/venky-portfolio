@@ -49,6 +49,7 @@ const timelineData = [
     ],
     tech: ['JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'RESTful APIs', 'JWT'],
     links: {
+      live: 'https://sushuruth-frontend.onrender.com',
       github: 'https://github.com/komminenivenkatesh/hospital-medical-system-sushuruth-',
     },
   },
